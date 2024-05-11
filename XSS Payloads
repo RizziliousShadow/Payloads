@@ -1,0 +1,2 @@
+-- This contains the payload for performing XSS injections--
+<script>alert(1)</script>
